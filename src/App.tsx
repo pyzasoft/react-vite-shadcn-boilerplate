@@ -7,14 +7,11 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 // import "./App.css";
-import { ThemeProvider, css, type Theme } from "@emotion/react";
+// import { css, type Theme } from "@emotion/react";
 // import BottomTab from "./Layout/BottomTab";
 // import TopNavBar from "./Layout/TopNavBar";
-import {
-  Outlet,
-  ScrollRestoration,
-} from "react-router-dom";
-import "./index.css";
+import { Outlet, ScrollRestoration } from "react-router-dom";
+// import "./index.css";
 import "swiper/css/bundle";
 // import axios from "axios";
 // import { ROOT_API_URL } from "./constants";
@@ -22,15 +19,15 @@ import { memo } from "react";
 // import axios from "axios";
 // import { ROOT_API_URL } from "./constants";
 
-const baseColors = {
+/* const baseColors = {
   primary: "#a40871",
   secondary: "#ffa326",
   tertiary: "#0e0b19",
   white: "#FFF",
   black: "#0e0b1b",
-};
+}; */
 
-const theme: Theme = {
+/* const theme: Theme = {
   colors: {
     ...baseColors,
     background: baseColors.tertiary,
@@ -59,7 +56,7 @@ const theme: Theme = {
       font: baseColors.secondary,
     },
   },
-};
+}; */
 
 const App = memo(function App() {
   // const params = useParams();
@@ -70,8 +67,11 @@ const App = memo(function App() {
   // const [loading, setLoading] = useState(false);
 
   return (
-    <ThemeProvider theme={theme}>
-      <div css={appStyle} className="overflow-auto px-0">
+    <>
+      {" "}
+      {/* <ThemeProvider theme={theme}> */}
+      {/* <div css={appStyle} className="overflow-auto px-0"> */}
+      <div className="overflow-auto px-0">
         {/* {!hideNavBars && <TopNavBar />} */}
         <div
           style={{
@@ -88,16 +88,18 @@ const App = memo(function App() {
           return location.pathname;
         }}
       />
-    </ThemeProvider>
+      {/* </ThemeProvider> */}
+    </>
   );
 });
 
 export default App;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const appStyle = (theme: Theme) => css`
+/* const appStyle = (theme: Theme) => css`
   .swiper-pagination-bullet {
     background: ${theme.colors.primary};
   }
   background-color: ${theme.background.primary};
 `;
+ */

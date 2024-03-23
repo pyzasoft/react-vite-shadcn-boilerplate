@@ -1,14 +1,14 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "bootstrap/dist/css/bootstrap.min.css";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
-import PageLoader from "./Pages/PageLoader.tsx";
-import HomePage from "./Pages/HomePage.tsx";
+import PageLoader from "./pages/PageLoader.tsx";
+import HomePage from "./pages/HomePage.tsx";
+import "./index.css";
 // import { InitializeGPT } from "./Components/Shared/GooglePublisherTag.tsx";
 
 const router = createBrowserRouter(
