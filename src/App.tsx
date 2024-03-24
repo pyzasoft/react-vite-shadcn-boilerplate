@@ -1,7 +1,7 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import "swiper/css/bundle";
 import { memo } from "react";
-import { ThemeProvider } from "./components/ui/ThemeProvider";
+import { ThemeProvider } from "./components/common/ThemeProvider";
 
 const App = memo(function App() {
 
