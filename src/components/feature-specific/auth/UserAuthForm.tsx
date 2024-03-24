@@ -4,9 +4,9 @@ import * as React from "react";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { FcGoogle } from "react-icons/fc";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { Button } from "../../ui/button";
+import { Input } from "../../ui/input";
+import { Label } from "../../ui/label";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
