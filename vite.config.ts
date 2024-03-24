@@ -21,8 +21,7 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
   },
 });
