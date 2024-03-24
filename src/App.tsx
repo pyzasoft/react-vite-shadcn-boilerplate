@@ -1,23 +1,30 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-// import "./App.css";
-// import { css, type Theme } from "@emotion/react";
-// import BottomTab from "./Layout/BottomTab";
-// import TopNavBar from "./Layout/TopNavBar";
 import { Outlet, ScrollRestoration } from "react-router-dom";
-// import "./index.css";
 import "swiper/css/bundle";
-// import axios from "axios";
-// import { ROOT_API_URL } from "./constants";
 import { memo } from "react";
-// import axios from "axios";
-// import { ROOT_API_URL } from "./constants";
+import { ThemeProvider } from "./components/ui/ThemeProvider";
+
+const App = memo(function App() {
+
+  return (
+    <>
+      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+        <div className="h-screen w-screen px-0 mx-0 bg-zinc-900">
+          {/* {!hideNavBars && <TopNavBar />} */}
+          <Outlet />
+        </div>
+        {/* {!hideNavBars && <BottomTab />} */}
+        <ScrollRestoration
+          getKey={(location) => {
+            return location.pathname;
+          }}
+        />
+      </ThemeProvider>
+    </>
+  );
+});
+
+export default App;
+
 
 /* const baseColors = {
   primary: "#a40871",
@@ -58,42 +65,6 @@ import { memo } from "react";
   },
 }; */
 
-const App = memo(function App() {
-  // const params = useParams();
-  // const { appData } = useLoaderData() as { appData: any };
-  // const arcadeOnly = true;
-  // const location = useLocation();
-  // const [hideNavBars, setHideNavBars] = useState(false);
-  // const [loading, setLoading] = useState(false);
-
-  return (
-    <>
-      {" "}
-      {/* <ThemeProvider theme={theme}> */}
-      {/* <div css={appStyle} className="overflow-auto px-0"> */}
-      <div className="overflow-auto px-0">
-        {/* {!hideNavBars && <TopNavBar />} */}
-        <div
-          style={{
-            paddingTop: "4rem",
-            height: "100vh",
-          }}
-        >
-          <Outlet />
-        </div>
-        {/* {!hideNavBars && <BottomTab />} */}
-      </div>
-      <ScrollRestoration
-        getKey={(location) => {
-          return location.pathname;
-        }}
-      />
-      {/* </ThemeProvider> */}
-    </>
-  );
-});
-
-export default App;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 /* const appStyle = (theme: Theme) => css`

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-
+import { ReloadIcon } from "@radix-ui/react-icons";
+import { FcGoogle } from "react-icons/fc";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import { Input } from "./input";
@@ -24,17 +25,31 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
-       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form onSubmit={onSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">
-            <Label className="sr-only" htmlFor="email">
+            <Label className="sr-only" htmlFor="username">
               Email
             </Label>
             <Input
-              id="email"
-              placeholder="name@example.com"
-              type="email"
+              id="username"
+              placeholder="Enter your username"
+              type="text"
+              autoCapitalize="none"
+              // autoComplete="email"
+              autoCorrect="off"
+              disabled={isLoading}
+            />
+          </div>
+          <div className="grid gap-1">
+            <Label className="sr-only" htmlFor="password">
+              Password
+            </Label>
+            <Input
+              id="password"
+              placeholder="Enter your password"
+              type="password"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
@@ -42,10 +57,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             />
           </div>
           <Button disabled={isLoading}>
-            {/* {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )} */}
-            Sign In with Email
+            {isLoading && <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />}
+            Sign In
           </Button>
         </div>
       </form>
@@ -54,18 +67,16 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           <span className="w-full border-t" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
+          <span className="px-2 text-muted-foreground">Or continue with</span>
         </div>
       </div>
       <Button variant="outline" type="button" disabled={isLoading}>
-       {/*  {isLoading ? (
-        //   <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+        {isLoading ? (
+          <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
         ) : (
-        //   <Icons.gitHub className="mr-2 h-4 w-4" />
-        )}{" "} */}
-        GitHub
+          <FcGoogle className="mr-2 h-4 w-4" />
+        )}
+        Google
       </Button>
     </div>
   );

@@ -7,8 +7,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import PageLoader from "./pages/PageLoader.tsx";
-import HomePage from "./pages/HomePage.tsx";
 import "./index.css";
+import { SignInPage } from "./pages/SignInPage.tsx";
+import React from "react";
 // import { InitializeGPT } from "./Components/Shared/GooglePublisherTag.tsx";
 
 const router = createBrowserRouter(
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
       errorElement={<div>Handle Error</div>}
       // loader={appLoader}
     >
-      <Route index element={<HomePage />} />
+      <Route index element={<SignInPage />} />
       {/* <Route path="home" element={<HomePage />} /> */}
       {/* <Route path="tournament/:tournamentId?" element={<PlayGamePage />} /> */}
       {/* <Route path="arcade/:slug?" element={<PlayGamePage />} /> */}
@@ -29,9 +30,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
-    {/* <React.StrictMode> */}
-    {/* <InitializeGPT /> */}
-    <RouterProvider fallbackElement={<PageLoader />} router={router} />
-    {/* </React.StrictMode> */}
+    <React.StrictMode>
+      <RouterProvider fallbackElement={<PageLoader />} router={router} />
+    </React.StrictMode>
   </>
 );
