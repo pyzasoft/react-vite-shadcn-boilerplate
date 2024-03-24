@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import PageLoader from "./pages/PageLoader.tsx";
 import "./index.css";
-import { SignInPage } from "./pages/SignInPage.tsx";
+import { LoginPage } from "./pages/LoginPage.tsx";
 import React from "react";
 // import { InitializeGPT } from "./Components/Shared/GooglePublisherTag.tsx";
 
@@ -20,7 +20,7 @@ const router = createBrowserRouter(
       errorElement={<div>Handle Error</div>}
       // loader={appLoader}
     >
-      <Route index element={<SignInPage />} />
+      <Route index element={<LoginPage />} />
       {/* <Route path="home" element={<HomePage />} /> */}
       {/* <Route path="tournament/:tournamentId?" element={<PlayGamePage />} /> */}
       {/* <Route path="arcade/:slug?" element={<PlayGamePage />} /> */}

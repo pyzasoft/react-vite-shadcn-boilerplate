@@ -18,6 +18,7 @@ const App = memo(function App() {
             return location.pathname;
           }}
         />
+        {/* TODO: need manage Authorized routes */}
       </ThemeProvider>
     </>
   );
