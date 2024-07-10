@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import App from "./App.tsx";
 import {
   createBrowserRouter,
@@ -10,6 +11,8 @@ import PageLoader from "./pages/PageLoader.tsx";
 import "./index.css";
 import { LoginPage } from "./pages/LoginPage.tsx";
 import React from "react";
+// import GameLoading from "./components/feature-specific/loaders/GameLoading/index.tsx";
+import store from "./redux/store.ts";
 // import { InitializeGPT } from "./Components/Shared/GooglePublisherTag.tsx";
 
 const router = createBrowserRouter(
@@ -31,7 +34,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
     <React.StrictMode>
-      <RouterProvider fallbackElement={<PageLoader />} router={router} />
+      <Provider store={store}>
+        <RouterProvider fallbackElement={<PageLoader />} router={router} />
+      </Provider>
     </React.StrictMode>
   </>
 );

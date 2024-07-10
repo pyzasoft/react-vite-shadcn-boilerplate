@@ -14,37 +14,32 @@ interface BaseColors {
 declare module "@emotion/react" {
   // Extend the existing Theme interface
   export interface Theme {
-    colors: {
+    layout: string; // "BOXED" | "TRIANGLE" |
+    font: string;
+    background: {
       primary: string;
       secondary: string;
       tertiary: string;
-      white: string;
-      black: string;
-      background: BaseColors.tertiary;
-      fontPrimary: BaseColors.white;
-      fontSecondary: BaseColors.black;
-      buttonPrimaryBackground: BaseColors.secondary;
-      buttonPrimaryFont: BaseColors.tertiary;
-      buttonSecondaryBackground: BaseColors.tertiary;
-      buttonSecondaryFont: BaseColors.secondary;
+      gradientStart: string;
+      gradientStop: string;
+      layout: string;
     };
-    border: {
-      radius: string;
+    foreground: {
+      primary: string;
+      secondary: string;
     };
-    background: {
-      primary: BaseColors.tertiary;
-      secondary: BaseColors.secondary;
-      gradient: `linear-gradient(${BaseColors.primary}, ${BaseColors.secondary})`;
+    text: {
+      primary: string;
+      secondary: string;
+      tertiaryTextColor: string;
     };
     button: {
-      primary: {
-        background: BaseColors.secondary;
-        font: BaseColors.tertiary;
-      };
-      secondary: {
-        background: BaseColors.tertiary;
-        font: BaseColors.secondary;
-      };
+      primaryGradientStart: string;
+      primaryGradientStop: string;
+      primaryShadow: string;
+      buttonTextColor: string;
+      secondaryButtonBackground: string;
+      tertiaryButtonBackground: string;
     };
   }
 }
